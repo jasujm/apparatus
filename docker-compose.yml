@@ -1,0 +1,44 @@
+# Additional configs that need to be added:
+# - mount secrets form mysql and web
+# - set additional environment for web
+# - mount ssl certificates for nginx
+# - set server_name for nginx
+
+version: "3"
+services:
+  mysql:
+    image: "jasujm/apparatus-mysql"
+    ports:
+    - "3306:3306"
+    environment:
+    - "MYSQL_DATABASE=apparatus"
+    - "MYSQL_USER_FILE=/run/secrets/mysql-apparatus-user"
+    - "MYSQL_PASSWORD_FILE=/run/secrets/mysql-apparatus-password"
+    - "MYSQL_RANDOM_ROOT_PASSWORD=1"
+    volumes:
+    - "dbdata:/var/lib/mysql"
+  web:
+    image: "jasujm/apparatus-web"
+    ports:
+    - "8000:8000"
+    environment:
+    - "ENV_PATH=/run/secrets/web-envfile"
+    - "DATA_DIR=/var/www/apparatus"
+    depends_on:
+    - "mysql"
+    volumes:
+    - "webdata:/var/www/apparatus"
+  nginx:
+    image: "jasujm/apparatus-nginx"
+    ports:
+    - "80:80"
+    - "443:443"
+    environment:
+    - "SERVER_NAME=localhost"
+    depends_on:
+    - "web"
+    volumes:
+    - "webdata:/var/www/apparatus:ro"
+volumes:
+  dbdata:
+  webdata:
