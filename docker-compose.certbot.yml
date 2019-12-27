@@ -2,7 +2,7 @@ version: "3"
 services:
   certbot:
     image: certbot/certbot
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do sleep 12h; certbot renew; done;'"
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do sleep 30d; certbot renew; done;'"
     volumes:
     - "certbotetc:/etc/letsencrypt"
     - "certbotwww:/var/www/certbot"
