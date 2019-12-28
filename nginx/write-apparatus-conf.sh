@@ -10,6 +10,7 @@ if [ -f "$fullchain_file" -a -f "${privkey_file}" ]; then
     cat > /etc/nginx/conf.d/apparatus.conf <<EOF
 ssl_certificate      ${fullchain_file};
 ssl_certificate_key  ${privkey_file};
+include              /etc/nginx/conf.d/include/ssl.conf;
 
 server {
     listen       [::]:443 ssl default_server;
