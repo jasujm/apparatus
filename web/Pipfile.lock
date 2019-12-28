@@ -84,10 +84,10 @@
         },
         "django-meta": {
             "hashes": [
-                "sha256:91b02caf07aacb0ce7a591412eacc55ae99f3f470f5ee4d9037a4bb7cbe65bc2",
-                "sha256:b0e30ba5bd0933b5b54d726be432ef3032a1d828b95d625e848a5d188b4e1d82"
+                "sha256:1cc01458630ba33170166ac916319a1393edfd8a1d068eb3d2de81cad7aa0699",
+                "sha256:c55573197e11658374f7743dd088ad0da0def6fc97aca4507ae48bfb213b9134"
             ],
-            "version": "==1.5.2"
+            "version": "==1.6.0"
         },
         "django-mptt": {
             "hashes": [
@@ -154,10 +154,10 @@
         },
         "django-treebeard": {
             "hashes": [
-                "sha256:c21db06a8d4943bf2a28d9d7a119058698fb76116df2679ecbf15a46a501de42"
+                "sha256:83aebc34a9f06de7daaec330d858d1c47887e81be3da77e3541fe7368196dd8a"
             ],
             "index": "pypi",
-            "version": "==4.3"
+            "version": "==4.3.1"
         },
         "djangocms-admin-style": {
             "hashes": [
@@ -168,10 +168,10 @@
         },
         "djangocms-apphook-setup": {
             "hashes": [
-                "sha256:1251f38f8182ade181f334f65d3c54c420303b470617de2bddeb95da5a746cf0",
-                "sha256:c7177e5f79f3f8c05ed219ea5d7259746f56e86f2615bf4d234304fd2d973754"
+                "sha256:48152518ada859a787def20a9e94cfbec094aa9c4c47c39240621b18345f73df",
+                "sha256:7d9987f4933b96e3eddcf52d47977ac669a30413fc4e5eeefdd5c3e28a2da482"
             ],
-            "version": "==0.3.0"
+            "version": "==0.4.1"
         },
         "djangocms-attributes-field": {
             "hashes": [
