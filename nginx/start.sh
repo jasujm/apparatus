@@ -2,6 +2,7 @@
 echo "server_name .${SERVER_NAME} localhost 127.0.0.1;" > /etc/nginx/conf.d/include/server_name.conf
 write-apparatus-conf.sh
 
+trap 'kill $(jobs -p)' EXIT
 while :; do
     sleep 1d
     nginx -s reload
