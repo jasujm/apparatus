@@ -196,6 +196,7 @@ INSTALLED_APPS = [
     'djangocms_snippet',
     'djangocms_googlemap',
     'djangocms_video',
+    'djangocms_page_meta',
     'apparatus'
 ]
 
@@ -243,5 +244,7 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
-META_SITE_PROTOCOL = 'http'
+META_SITE_PROTOCOL = 'https'
 META_USE_SITES = True
+META_USE_OG_PROPERTIES = True
+META_USE_TWITTER_PROPERTIES = True

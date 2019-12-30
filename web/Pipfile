@@ -32,6 +32,7 @@ djangocms-blog = "*"
 uwsgi = "*"
 django-environ = "*"
 mysqlclient = "*"
+djangocms-page-meta = "*"
 
 [requires]
 python_version = "3.8"
