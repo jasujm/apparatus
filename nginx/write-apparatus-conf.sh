@@ -31,6 +31,10 @@ server {
     server_name  www.${SERVER_NAME} localhost 127.0.0.1;
     charset      utf-8;
 
+    gzip             on;
+    gzip_types       text/plain text/xml text/css application/javascript;
+    gzip_min_length  1024;
+
     location / {
         uwsgi_pass apparatus;
         include /etc/nginx/uwsgi_params;
