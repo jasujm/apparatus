@@ -8,6 +8,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.urls import path
 from django.views.static import serve
 
 admin.autodiscover()
@@ -23,8 +24,10 @@ urlpatterns += i18n_patterns(
 
 # This is only needed when using runserver.
 if settings.DEBUG:
+    import debug_toolbar
     urlpatterns = (
         [
+            path('__debug__/', include(debug_toolbar.urls)),
             url(
                 r"^media/(?P<path>.*)$",
                 serve,

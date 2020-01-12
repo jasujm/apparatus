@@ -42,6 +42,10 @@ DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
+if DEBUG:
+    INTERNAL_IPS = ["127.0.0.1"]
+
+
 if not DEBUG:
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
@@ -127,6 +131,7 @@ TEMPLATES = [
 
 
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "cms.middleware.utils.ApphookReloadMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -189,6 +194,7 @@ INSTALLED_APPS = [
     "djangocms_video",
     "djangocms_page_meta",
     "apparatus",
+    "debug_toolbar",
 ]
 
 LANGUAGES = (
