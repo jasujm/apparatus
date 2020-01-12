@@ -13,19 +13,24 @@ from django.views.static import serve
 admin.autodiscover()
 
 urlpatterns = [
-    url(r'^sitemap\.xml$', sitemap,
-        {'sitemaps': {'cmspages': CMSSitemap}}),
-    url(r'^taggit_autosuggest/', include('taggit_autosuggest.urls')),
+    url(r"^sitemap\.xml$", sitemap, {"sitemaps": {"cmspages": CMSSitemap}}),
+    url(r"^taggit_autosuggest/", include("taggit_autosuggest.urls")),
 ]
 
 urlpatterns += i18n_patterns(
-    url(r'^admin/', admin.site.urls),  # NOQA
-    url(r'^', include('cms.urls')),
+    url(r"^admin/", admin.site.urls), url(r"^", include("cms.urls")),  # NOQA
 )
 
 # This is only needed when using runserver.
 if settings.DEBUG:
-    urlpatterns = [
-        url(r'^media/(?P<path>.*)$', serve,
-            {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
-        ] + staticfiles_urlpatterns() + urlpatterns
+    urlpatterns = (
+        [
+            url(
+                r"^media/(?P<path>.*)$",
+                serve,
+                {"document_root": settings.MEDIA_ROOT, "show_indexes": True},
+            ),
+        ]
+        + staticfiles_urlpatterns()
+        + urlpatterns
+    )

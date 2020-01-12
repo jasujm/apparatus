@@ -4,6 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from .models import CodeSnippet
 
+
 @plugin_pool.register_plugin
 class CodeSnippetPlugin(CMSPluginBase):
     name = _("Code snippet")
