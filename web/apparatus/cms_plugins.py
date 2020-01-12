@@ -7,6 +7,7 @@ from .models import CodeSnippet
 
 @plugin_pool.register_plugin
 class CodeSnippetPlugin(CMSPluginBase):
+    module = _("Apparatus")
     name = _("Code snippet")
     model = CodeSnippet
     text_enabled = True
