@@ -25,9 +25,10 @@ urlpatterns += i18n_patterns(
 # This is only needed when using runserver.
 if settings.DEBUG:
     import debug_toolbar
+
     urlpatterns = (
         [
-            path('__debug__/', include(debug_toolbar.urls)),
+            path("__debug__/", include(debug_toolbar.urls)),
             url(
                 r"^media/(?P<path>.*)$",
                 serve,
