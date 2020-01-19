@@ -1,5 +1,6 @@
 {% load sekizai_tags %}
 {% addtoblock "css" %}<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css" integrity="sha384-ut3ELVx81ErZQaaMTknSmGb0CEGAKoBFTamRcY1ddG4guN0aoga4C+B6B7Kv1Ll1" crossorigin="anonymous">{% endaddtoblock %}
 {% addtoblock "js" %}<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js" integrity="sha384-vkCul7kDD26tJmBcTcPL1YcpGJF5LBJ8nZ0UFBKHLB30e3lEuLyhlhpTjAiVfJ4s" crossorigin="anonymous"></script>{% endaddtoblock %}
+{% if instance.programming_language.is_external %}{% addtoblock "js" %}<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/languages/{{ instance.programming_language.code|urlencode }}.min.js"{% if instance.programming_language.subresource_integrity_hash %} integrity="sha384-{{ instance.programming_language.subresource_integrity_hash }}" crossorigin="anonymous"{% endif %}></script>{% endaddtoblock %}{% endif %}
 {% addtoblock "js" %}<script>hljs.initHighlightingOnLoad();</script>{% endaddtoblock %}
 <pre id="codesnippet-{{ instance.pk }}"><code{% if instance.programming_language %} class="language-{{ instance.programming_language.code }}"{% endif %}>{{ instance.body }}</code></pre>
