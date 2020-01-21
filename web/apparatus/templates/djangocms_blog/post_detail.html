@@ -39,7 +39,7 @@
         {% endfor %}
         </section>
     {% endif %}
-    {% if post.enable_comments %}
+    {% if post.is_published and post.enable_comments %}
     <div class="blog-comments">
         <div id="disqus_thread"></div>
         <script>
