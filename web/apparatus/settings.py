@@ -246,6 +246,7 @@ META_USE_SITES = True
 META_USE_OG_PROPERTIES = True
 META_USE_TWITTER_PROPERTIES = True
 
+APPARATUS_DISQUS_SITE = "apparatus-1"
 APPARATUS_CODESNIPPET_CDN_BASE_URL = (
     "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build"
 )

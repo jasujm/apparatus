@@ -3,7 +3,7 @@ from cms.api import add_plugin
 from cms.models import Placeholder
 
 from apparatus import models, cms_plugins, settings
-from apparatus.templatetags import codesnippet_tags
+from apparatus.templatetags import codesnippet_tags, apparatus_tags
 
 
 def _get_test_programming_language():
@@ -42,4 +42,26 @@ class CodeSnippetTest(TestCase):
         context = plugin_instance.render({}, model_instance, None)
         self.assertEqual(
             context.get("cdn_base_url"), settings.APPARATUS_CODESNIPPET_CDN_BASE_URL
+        )
+
+
+class BlogCommentTest(TestCase):
+    def testRenderBlogComments(self):
+        class MockMeta:
+            @property
+            def url(self):
+                return "localhost"
+
+        class MockPost:
+            @property
+            def guid(self):
+                return "guid"
+
+        self.assertEqual(
+            apparatus_tags.comment_section({"meta": MockMeta(), "post": MockPost(),}),
+            {
+                "apparatus_site": settings.APPARATUS_DISQUS_SITE,
+                "page_url": "localhost",
+                "page_identifier": "guid",
+            },
         )

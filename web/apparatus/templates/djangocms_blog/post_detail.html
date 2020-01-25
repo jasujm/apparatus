@@ -1,5 +1,5 @@
 {% extends "djangocms_blog/base.html" %}
-{% load i18n easy_thumbnails_tags cms_tags sekizai_tags %}
+{% load i18n easy_thumbnails_tags cms_tags sekizai_tags apparatus_tags %}
 
 {% block canonical_url %}<link rel="canonical" href="{{ meta.url }}"/>{% endblock canonical_url %}
 {% block title %}{{ post.get_title }}{% endblock %}
@@ -40,23 +40,8 @@
         </section>
     {% endif %}
     {% if post.is_published and post.enable_comments %}
-    <div class="blog-comments">
-        <div id="disqus_thread"></div>
-        <script>
-            var disqus_config = function () {
-                this.page.url = "{{ meta.url | escapejs }}";
-                this.page.identifier = "{{ post.guid }}";
-            };
-            (function() {
-                var d = document, s = d.createElement('script');
-                s.src = 'https://apparatus-1.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        {% comment_section %}
         {% addtoblock "js" %}<script id="dsq-count-scr" src="https://apparatus-1.disqus.com/count.js" async></script>{% endaddtoblock %}
-    </div>
     {% endif %}
 </article>
 {% endblock content_blog %}
