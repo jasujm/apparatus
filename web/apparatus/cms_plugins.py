@@ -11,7 +11,7 @@ class CodeSnippetPlugin(CMSPluginBase):
     name = _("Code snippet")
     model = CodeSnippet
     text_enabled = True
-    render_template = "apparatus/code_snippet.html"
+    render_template = "apparatus/codesnippet.html"
     fields = ["programming_language", "body"]
 
     @classmethod
