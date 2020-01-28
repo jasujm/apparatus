@@ -3,8 +3,8 @@
 
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
 
-{% block content %}
+{% block content_base %}
     <div class="content">
-        {% placeholder "content" %}
+        {% block content %}{% placeholder "content" %}{% endblock %}
     </div>
-{% endblock content %}
+{% endblock content_base %}
