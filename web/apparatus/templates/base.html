@@ -10,13 +10,14 @@
         {% endblock meta %}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static "apparatus/css/apparatus.css" %}">
+        <link rel="icon" href="{% static "apparatus/img/favicon.png" %}">
         {% render_block "css" %}
     </head>
     <body>
         {% cms_toolbar %}
         <div class="container">
             <header class="apparatus-header mt-1">
-                {% static_placeholder "apparatus_header" %}
+                <h1 class="m-1"><a href="/"><img src="{% static "apparatus/img/logo.png" %}" alt="Apparatus"></title></h1>
             </header>
             <nav class="apparatus-menu navbar navbar-expand-sm bg-light mt-2 border-top border-bottom">
                 {% show_menu 0 100 100 100 "apparatus/mainmenu.html" %}
