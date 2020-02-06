@@ -1,4 +1,4 @@
-{% load cms_tags menu_tags sekizai_tags i18n static page_meta_tags %}
+{% load cms_tags menu_tags sekizai_tags i18n static page_meta_tags fullurl %}
 <!doctype html>
 <html lang="{{ LANGUAGE_CODE }}">
     <head>
@@ -8,6 +8,7 @@
         {% page_meta request.current_page as page_meta %}
         {% include "djangocms_page_meta/meta.html" with meta=page_meta %}
         {% endblock meta %}
+        {% if not meta.image and not page_meta.image %}<meta name="og:image" content="{% fullstatic "apparatus/img/logomark.png" %}">{% endif %}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static "apparatus/css/apparatus.css" %}">
         <link rel="icon" href="{% static "apparatus/img/favicon.png" %}">

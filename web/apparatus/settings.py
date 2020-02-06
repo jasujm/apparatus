@@ -193,6 +193,7 @@ INSTALLED_APPS = [
     "djangocms_googlemap",
     "djangocms_video",
     "djangocms_page_meta",
+    "fullurl",
     "apparatus",
     "debug_toolbar",
 ]

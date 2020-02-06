@@ -35,6 +35,7 @@ django-environ = "*"
 mysqlclient = "*"
 djangocms-page-meta = "*"
 django-debug-toolbar = "*"
+django-fullurl = "*"
 
 [requires]
 python_version = "3.8"
