@@ -20,5 +20,5 @@ if [ ! -d $apparatus_media_dir ]; then
 fi
 
 python manage.py migrate
-python manage.py collectstatic --noinput
+python manage.py collectstatic --noinput --clear
 exec uwsgi --uid uwsgi --socket :8000 --protocol uwsgi --module apparatus.wsgi
