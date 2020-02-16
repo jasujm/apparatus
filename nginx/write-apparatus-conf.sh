@@ -47,6 +47,14 @@ server {
     location /media {
         root /var/www/apparatus;
     }
+
+    location = /robots.txt {
+        return 404;
+    }
+
+    location = /favicon.ico {
+        return 404;
+    }
 }
 EOF
 fi
