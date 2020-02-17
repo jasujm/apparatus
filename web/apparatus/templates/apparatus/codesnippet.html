@@ -1,5 +1,5 @@
 {% load sekizai_tags codesnippet_tags %}
-{% addtoblock "css" %}<link rel="stylesheet" href="{{ cdn_base_url }}/styles/default.min.css" integrity="sha384-ut3ELVx81ErZQaaMTknSmGb0CEGAKoBFTamRcY1ddG4guN0aoga4C+B6B7Kv1Ll1" crossorigin="anonymous">{% endaddtoblock %}
+{% addtoblock "css" %}<link rel="stylesheet" href="{{ cdn_base_url }}/styles/atom-one-light.min.css" integrity="sha384-Z7aaNlOx9oV5Gcif0woUM+eA+7LZxnWZSxr6i9R+nBa2DL7w0QGH8kxWXY3ixXvA" crossorigin="anonymous">{% endaddtoblock %}
 {% addtoblock "js" %}{% include "apparatus/include/hlscript.html" with filename="highlight.min.js" is_external=True subresource_integrity_hash="vkCul7kDD26tJmBcTcPL1YcpGJF5LBJ8nZ0UFBKHLB30e3lEuLyhlhpTjAiVfJ4s" %}{% endaddtoblock %}
 {% if instance.programming_language.is_external %}{% addtoblock "js" %}{% hlscript %}{% endaddtoblock %}{% endif %}
 {% addtoblock "js" %}<script>hljs.initHighlightingOnLoad();</script>{% endaddtoblock %}
