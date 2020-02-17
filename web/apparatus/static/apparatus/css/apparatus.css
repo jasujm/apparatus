@@ -8,5 +8,4 @@
 .container code { color: inherit; }
 .container .blog-visual img { float: left; margin-right: 1em; }
 .container .post-detail .blog-visual img { float: none; margin-bottom: 1em; }
-.container .post-detail.blog-image-full { max-width: 100%; height: auto; }
 .container .post-item { clear: both; }
