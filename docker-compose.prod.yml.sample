@@ -1,0 +1,19 @@
+# Checklist
+# - Add ./env/secrets/mysql/mysql-apparatus-user and ./env/secrets/mysql/mysql-apparatus-password
+# - Add correct domains to ALLOWED_HOSTS
+# - Add ./env/secrets/web/web-envfile containing SECRET_KEY and DATABASE_URL
+# - Add SERVER_NAME containing the base domain name
+
+version: "3"
+services:
+  mysql:
+    volumes:
+    - "./env/secrets/mysql:/run/secrets:ro"
+  web:
+    environment:
+    - "ALLOWED_HOSTS=127.0.0.1,::,localhost, ### "
+    volumes:
+    - "./env/secrets/web:/run/secrets:ro"
+  nginx:
+    environment:
+    - "SERVER_NAME= ### "

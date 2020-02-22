@@ -1,9 +1,3 @@
-# Additional configs that need to be added:
-# - mount secrets form mysql and web
-# - set additional environment for web
-# - mount ssl certificates for nginx
-# - set server_name for nginx
-
 version: "3"
 services:
   mysql:
