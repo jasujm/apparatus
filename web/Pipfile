@@ -29,7 +29,7 @@ six = "*"
 pytz = "*"
 Django = "<2.3"
 Pillow = ">=3.0"
-djangocms-blog = "*"
+djangocms-blog = {editable = true,git = "https://github.com/jasujm/djangocms-blog.git"}
 uwsgi = "*"
 django-environ = "*"
 mysqlclient = "*"
