@@ -196,7 +196,7 @@
         "djangocms-blog": {
             "editable": true,
             "git": "https://github.com/jasujm/djangocms-blog.git",
-            "ref": "466abbef5b457221edc1e430a9318353eedeff87"
+            "ref": "44278494b4cd7461f5b9980747054eb5831f6eac"
         },
         "djangocms-bootstrap4": {
             "hashes": [
