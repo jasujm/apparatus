@@ -7,6 +7,7 @@
 .container h6 a { color: inherit; }
 .container code { color: inherit; }
 .container img { max-width: 100%; height: auto; }
+.container blockquote { margin-left: 1em; border-left: 5px solid #dee2e6; padding-left: 1em; }
 .container .blog-visual img { float: left; margin-right: 1em; }
 .container .post-detail .blog-visual img { float: none; margin-bottom: 1em; }
 .container .post-item { clear: both; }
