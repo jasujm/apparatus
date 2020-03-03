@@ -23,6 +23,7 @@ env = environ.Env(
     DEBUG=(bool, False),
     ALLOWED_HOSTS=(list, []),
     DATA_DIR=(str, os.path.dirname(os.path.dirname(__file__))),
+    DJANGO_LOG_LEVEL=(str, "INFO"),
 )
 # reading .env file
 environ.Env.read_env(env.str("ENV_PATH", ".env"))
@@ -50,6 +51,16 @@ if not DEBUG:
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
 
+# Logging
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {"console": {"class": "logging.StreamHandler",},},
+    "loggers": {
+        "django": {"handlers": ["console"], "level": env("DJANGO_LOG_LEVEL"),},
+    },
+}
 
 # Application definition
 
