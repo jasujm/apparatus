@@ -63,6 +63,9 @@ WSGI_APPLICATION = "apparatus.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+DATABASES = {
+    "default": env.db(),
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -231,10 +234,6 @@ CMS_TEMPLATES = (
 CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
-
-DATABASES = {
-    "default": env.db(),
-}
 
 THUMBNAIL_PROCESSORS = (
     "easy_thumbnails.processors.colorspace",
