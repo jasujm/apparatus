@@ -1,7 +1,3 @@
-import os  # isort:skip
-
-gettext = lambda s: s
-_ = gettext
 """
 Django settings for apparatus project.
 
@@ -16,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+from django.utils.translation import ugettext_lazy as _
 import environ
 
 env = environ.Env(
@@ -214,35 +211,24 @@ INSTALLED_APPS = [
 
 LANGUAGES = (
     ## Customize this
-    ("en", "English"),
-    ("fi", "Suomi"),
+    ("en", _("English")),
+    ("fi", _("Finnish")),
 )
 
 CMS_LANGUAGES = {
     ## Customize this
     1: [
-        {
-            "code": "en",
-            "name": "English",
-        },
-        {
-            "code": "fi",
-            "name": "Suomi",
-            "public": False,
-        },
+        {"code": "en", "name": _("English"),},
+        {"code": "fi", "name": _("Finnish"), "public": False,},
     ],
-    "default": {
-        "public": True,
-        "hide_untranslated": False,
-        "fallbacks": ["en", "fi"],
-    },
+    "default": {"public": True, "hide_untranslated": False, "fallbacks": ["en", "fi"],},
 }
 
 CMS_TEMPLATES = (
     ## Customize this
-    ("fullwidth.html", "Fullwidth"),
-    ("sidebar_left.html", "Sidebar Left"),
-    ("sidebar_right.html", "Sidebar Right"),
+    ("fullwidth.html", _("Fullwidth")),
+    ("sidebar_left.html", _("Sidebar Left")),
+    ("sidebar_right.html", _("Sidebar Right")),
 )
 
 CMS_PERMISSION = True

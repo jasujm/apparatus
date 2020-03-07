@@ -11,6 +11,10 @@ class ProgrammingLanguage(models.Model):
         _("Subresource integrity hash"), max_length=64, blank=True
     )
 
+    class Meta:
+        verbose_name = _("programming language")
+        verbose_name_plural = _("programming languages")
+
     def __str__(self):
         return f"{self.name} ({self.code})"
 
@@ -20,3 +24,7 @@ class CodeSnippet(CMSPlugin):
         ProgrammingLanguage, on_delete=models.PROTECT, blank=True, null=True
     )
     body = models.TextField(_("Body"))
+
+    class Meta:
+        verbose_name = _("code snippet")
+        verbose_name_plural = _("code snippets")
