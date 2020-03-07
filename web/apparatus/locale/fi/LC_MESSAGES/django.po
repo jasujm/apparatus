@@ -1,0 +1,116 @@
+# Apparatus translations (Finnish)
+# Copyright (C) 2020
+# This file is distributed under the same license as the Apparatus package.
+# Jaakko Moisio <jaakko@moisio.fi>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Apparatus\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-07 10:46+0100\n"
+"PO-Revision-Date: 2020-03-07 10:52+0100\n"
+"Last-Translator: Jaakko Moisio <jaakko@moisio.fi>\n"
+"Language-Team: Jaakko Moisio <jaakko@moisio.fi>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#: apparatus/cms_plugins.py:11
+msgid "Apparatus"
+msgstr ""
+
+#: apparatus/cms_plugins.py:12
+msgid "Code snippet"
+msgstr ""
+
+#: apparatus/models.py:7
+msgid "Code"
+msgstr ""
+
+#: apparatus/models.py:8
+msgid "Name"
+msgstr ""
+
+#: apparatus/models.py:9
+msgid "Is external resource"
+msgstr ""
+
+#: apparatus/models.py:11
+msgid "Subresource integrity hash"
+msgstr ""
+
+#: apparatus/models.py:15
+msgid "programming language"
+msgstr ""
+
+#: apparatus/models.py:16
+msgid "programming languages"
+msgstr ""
+
+#: apparatus/models.py:26
+msgid "Body"
+msgstr ""
+
+#: apparatus/models.py:29
+msgid "code snippet"
+msgstr ""
+
+#: apparatus/models.py:30
+msgid "code snippets"
+msgstr ""
+
+#: apparatus/settings.py:214 apparatus/settings.py:221
+msgid "English"
+msgstr "englanti"
+
+#: apparatus/settings.py:215 apparatus/settings.py:222
+msgid "Finnish"
+msgstr "suomi"
+
+#: apparatus/settings.py:229
+msgid "Fullwidth"
+msgstr ""
+
+#: apparatus/settings.py:230
+msgid "Sidebar Left"
+msgstr ""
+
+#: apparatus/settings.py:231
+msgid "Sidebar Right"
+msgstr ""
+
+#: apparatus/templates/apparatus/mainmenu.html:2
+msgid "Main menu"
+msgstr "Päävalikko"
+
+#: apparatus/templates/djangocms_blog/plugins/archive.html:3
+msgid "Archive"
+msgstr "Arkisto"
+
+#: apparatus/templates/djangocms_blog/plugins/archive.html:17
+#: apparatus/templates/djangocms_blog/plugins/categories.html:10
+#, python-format
+msgid "1 article"
+msgid_plural "%(articles)s articles"
+msgstr[0] "yksi kirjoitus"
+msgstr[1] "%(articles)s kirjoitusta"
+
+#: apparatus/templates/djangocms_blog/plugins/archive.html:18
+#: apparatus/templates/djangocms_blog/plugins/categories.html:11
+msgid "0 articles"
+msgstr "Ei kirjoituksia"
+
+#: apparatus/templates/djangocms_blog/plugins/archive.html:26
+msgid "No article found."
+msgstr "Ei kirjoituksia."
+
+#: apparatus/templates/djangocms_blog/plugins/categories.html:3
+msgid "Categories"
+msgstr "Kategoriat"
+
+#: apparatus/templates/djangocms_blog/plugins/categories.html:15
+msgid "No categories found."
+msgstr "Ei kategorioita."
