@@ -219,7 +219,7 @@ CMS_LANGUAGES = {
     ## Customize this
     1: [
         {"code": "en", "name": _("English"),},
-        {"code": "fi", "name": _("Finnish"), "public": False,},
+        {"code": "fi", "name": _("Finnish"), "public": True,},
     ],
     "default": {"public": True, "hide_untranslated": False, "fallbacks": ["en", "fi"],},
 }
