@@ -135,7 +135,7 @@
         },
         "djangocms-blog": {
             "git": "https://github.com/jasujm/djangocms-blog.git",
-            "ref": "281988f847a76dad418c92aa66a541a52f795ccd"
+            "ref": "890f089c7faebb0aa8141f52e460faa69dc00f1c"
         },
         "djangocms-bootstrap4": {
             "hashes": [
