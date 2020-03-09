@@ -1,5 +1,27 @@
 #!/bin/bash
 
+cat > /etc/nginx/conf.d/default.conf <<EOF
+server {
+    listen       [::]:80 default_server;
+    listen       80 default_server;
+    return       444;
+}
+
+server {
+    listen       [::]:80;
+    listen       80;
+    server_name  .${SERVER_NAME} localhost 127.0.0.1;
+
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    location / {
+        return       301 https://\$host\$request_uri;
+    }
+}
+EOF
+
 # Only enable the HTTPS server serving the apparatus app if TLS certs
 # are found. This allows first exposing ACME endpoints via HTTP, and
 # then running the main website with the acquired certs.
@@ -8,6 +30,10 @@ fullchain_file="${cert_directory_prefix}/fullchain.pem"
 privkey_file="${cert_directory_prefix}/privkey.pem"
 if [ -f "$fullchain_file" -a -f "${privkey_file}" ]; then
     cat > /etc/nginx/conf.d/apparatus.conf <<EOF
+upstream apparatus {
+    server web:8000;
+}
+
 ssl_certificate      ${fullchain_file};
 ssl_certificate_key  ${privkey_file};
 include              /etc/nginx/conf.d/include/ssl.conf;
