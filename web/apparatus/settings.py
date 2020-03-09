@@ -142,8 +142,14 @@ TEMPLATES = [
 
 
 MIDDLEWARE = [
+    # Develop time middleware, should not affect behavior in prod
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     "cms.middleware.utils.ApphookReloadMiddleware",
+    # htmlmin -- if ever add cache, check how this should interact:
+    # https://pypi.org/project/django-htmlmin/
+    "htmlmin.middleware.HtmlMinifyMiddleware",
+    "htmlmin.middleware.MarkRequestMiddleware",
+    # Other middleware
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
