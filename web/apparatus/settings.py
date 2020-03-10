@@ -109,10 +109,14 @@ STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(DATA_DIR, "media")
 STATIC_ROOT = os.path.join(DATA_DIR, "static")
-
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "apparatus", "static"),)
-SITE_ID = 1
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "compressor.finders.CompressorFinder",
+]
 
+SITE_ID = 1
 
 TEMPLATES = [
     {
@@ -211,6 +215,7 @@ INSTALLED_APPS = [
     "djangocms_video",
     "djangocms_page_meta",
     "fullurl",
+    "compressor",
     "apparatus",
     "debug_toolbar",
 ]
@@ -252,6 +257,8 @@ META_USE_SITES = True
 META_USE_OG_PROPERTIES = True
 META_OG_SECURE_URL_ITEMS = []
 META_USE_TWITTER_PROPERTIES = True
+
+COMPRESS_OFFLINE = True
 
 APPARATUS_DISQUS_SITE = "apparatus-1"
 APPARATUS_CODESNIPPET_CDN_BASE_URL = (

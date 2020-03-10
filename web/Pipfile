@@ -37,6 +37,7 @@ djangocms-page-meta = "*"
 django-debug-toolbar = "*"
 django-fullurl = "*"
 django-htmlmin = "*"
+django-compressor = "*"
 
 [requires]
 python_version = "3.8"

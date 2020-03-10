@@ -17,4 +17,5 @@ fi
 
 python manage.py migrate
 python manage.py collectstatic --noinput --clear
+python manage.py compress
 exec uwsgi --uid uwsgi --socket :8000 --protocol uwsgi --module apparatus.wsgi
