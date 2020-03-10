@@ -30,10 +30,6 @@ fullchain_file="${cert_directory_prefix}/fullchain.pem"
 privkey_file="${cert_directory_prefix}/privkey.pem"
 if [ -f "$fullchain_file" -a -f "${privkey_file}" ]; then
     cat > /etc/nginx/conf.d/apparatus.conf <<EOF
-upstream apparatus {
-    server web:8000;
-}
-
 ssl_certificate      ${fullchain_file};
 ssl_certificate_key  ${privkey_file};
 include              /etc/nginx/conf.d/include/ssl.conf;
@@ -62,7 +58,7 @@ server {
     gzip_min_length  1024;
 
     location / {
-        uwsgi_pass apparatus;
+        uwsgi_pass web:8000;
         include /etc/nginx/uwsgi_params;
     }
 

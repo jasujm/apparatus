@@ -29,8 +29,6 @@ services:
     - "443:443"
     environment:
     - "SERVER_NAME=localhost"
-    depends_on:
-    - "web"
     volumes:
     - "webdata:/var/www/apparatus:ro"
 volumes:
