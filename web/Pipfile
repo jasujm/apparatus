@@ -38,6 +38,7 @@ django-debug-toolbar = "*"
 django-fullurl = "*"
 django-htmlmin = "*"
 django-compressor = "*"
+django-libsass = "*"
 
 [requires]
 python_version = "3.8"

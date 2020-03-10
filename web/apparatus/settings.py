@@ -259,6 +259,11 @@ META_OG_SECURE_URL_ITEMS = []
 META_USE_TWITTER_PROPERTIES = True
 
 COMPRESS_OFFLINE = True
+COMPRESS_PRECOMPILERS = [
+    ("text/x-scss", "django_libsass.SassCompiler"),
+]
+if not DEBUG:
+    LIBSASS_OUTPUT_STYLE = "compressed"
 
 APPARATUS_DISQUS_SITE = "apparatus-1"
 APPARATUS_CODESNIPPET_CDN_BASE_URL = (
