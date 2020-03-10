@@ -68,6 +68,12 @@ server {
 
     location /static {
         root /var/www/apparatus;
+
+        location /static/CACHE {
+            expires max;
+            gzip_vary on;
+            add_header Cache-Control "public, immutable";
+        }
     }
 
     location /media {
