@@ -33,6 +33,7 @@ if [ -f "$fullchain_file" -a -f "${privkey_file}" ]; then
 ssl_certificate      ${fullchain_file};
 ssl_certificate_key  ${privkey_file};
 include              /etc/nginx/conf.d/include/ssl.conf;
+include              /etc/nginx/conf.d/include/security_headers.conf;
 
 server {
     listen       [::]:443 ssl default_server;
@@ -69,6 +70,7 @@ server {
             expires max;
             gzip_vary on;
             add_header Cache-Control "public, immutable";
+            include    /etc/nginx/conf.d/include/security_headers.conf;
         }
     }
 
