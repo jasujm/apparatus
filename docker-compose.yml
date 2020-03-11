@@ -31,6 +31,8 @@ services:
     - "SERVER_NAME=localhost"
     volumes:
     - "webdata:/var/www/apparatus:ro"
+    depends_on:
+    - "web"
 volumes:
   dbdata:
   webdata:
