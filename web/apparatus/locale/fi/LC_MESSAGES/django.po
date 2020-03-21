@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Apparatus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-07 10:46+0100\n"
+"POT-Creation-Date: 2020-03-21 08:26+0100\n"
 "PO-Revision-Date: 2020-03-07 10:52+0100\n"
 "Last-Translator: Jaakko Moisio <jaakko@moisio.fi>\n"
 "Language-Team: Jaakko Moisio <jaakko@moisio.fi>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: apparatus/cms_plugins.py:11
+#: apparatus/cms_plugins.py:10
 msgid "Apparatus"
 msgstr ""
 
-#: apparatus/cms_plugins.py:12
+#: apparatus/cms_plugins.py:11
 msgid "Code snippet"
 msgstr ""
 
@@ -34,51 +34,43 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: apparatus/models.py:9
-msgid "Is external resource"
-msgstr ""
-
 #: apparatus/models.py:11
-msgid "Subresource integrity hash"
-msgstr ""
-
-#: apparatus/models.py:15
 msgid "programming language"
 msgstr ""
 
-#: apparatus/models.py:16
+#: apparatus/models.py:12
 msgid "programming languages"
 msgstr ""
 
-#: apparatus/models.py:26
+#: apparatus/models.py:22
 msgid "Body"
 msgstr ""
 
-#: apparatus/models.py:29
+#: apparatus/models.py:25
 msgid "code snippet"
 msgstr ""
 
-#: apparatus/models.py:30
+#: apparatus/models.py:26
 msgid "code snippets"
 msgstr ""
 
-#: apparatus/settings.py:214 apparatus/settings.py:221
+#: apparatus/settings.py:224 apparatus/settings.py:231
 msgid "English"
 msgstr "englanti"
 
-#: apparatus/settings.py:215 apparatus/settings.py:222
+#: apparatus/settings.py:225 apparatus/settings.py:232
 msgid "Finnish"
 msgstr "suomi"
 
-#: apparatus/settings.py:229
+#: apparatus/settings.py:239
 msgid "Fullwidth"
 msgstr ""
 
-#: apparatus/settings.py:230
+#: apparatus/settings.py:240
 msgid "Sidebar Left"
 msgstr ""
 
-#: apparatus/settings.py:231
+#: apparatus/settings.py:241
 msgid "Sidebar Right"
 msgstr ""
 
