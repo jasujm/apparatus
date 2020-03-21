@@ -1,6 +1,5 @@
-{% load sekizai_tags codesnippet_tags %}
-{% addtoblock "css" %}<link rel="stylesheet" href="{{ cdn_base_url }}/styles/atom-one-light.min.css" integrity="sha384-Z7aaNlOx9oV5Gcif0woUM+eA+7LZxnWZSxr6i9R+nBa2DL7w0QGH8kxWXY3ixXvA" crossorigin="anonymous">{% endaddtoblock %}
-{% addtoblock "js" %}{% include "apparatus/include/hlscript.html" with filename="highlight.min.js" is_external=True subresource_integrity_hash="vkCul7kDD26tJmBcTcPL1YcpGJF5LBJ8nZ0UFBKHLB30e3lEuLyhlhpTjAiVfJ4s" %}{% endaddtoblock %}
-{% if instance.programming_language.is_external %}{% addtoblock "js" %}{% hlscript %}{% endaddtoblock %}{% endif %}
+{% load sekizai_tags static %}
+{% addtoblock "css" %}<link rel="stylesheet" href="{% static "apparatus/css/highlight.min.css" %}">{% endaddtoblock %}
+{% addtoblock "js" %}<script src="{% static "apparatus/js/highlight.pack.js" %}"></script>{% endaddtoblock %}
 {% addtoblock "js" %}<script>hljs.initHighlightingOnLoad();</script>{% endaddtoblock %}
 <pre id="codesnippet-{{ instance.pk }}"><code{% if instance.programming_language %} class="language-{{ instance.programming_language.code }}"{% endif %}>{{ instance.body }}</code></pre>

@@ -1,6 +1,5 @@
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
-from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 
 from .models import CodeSnippet
@@ -18,8 +17,3 @@ class CodeSnippetPlugin(CMSPluginBase):
     @classmethod
     def get_render_queryset(cls):
         return super().get_render_queryset().select_related("programming_language")
-
-    def render(self, context, instance, placeholder):
-        context = super().render(context, instance, placeholder)
-        context["cdn_base_url"] = settings.APPARATUS_CODESNIPPET_CDN_BASE_URL
-        return context

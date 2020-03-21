@@ -6,10 +6,6 @@ from django.utils.translation import ugettext_lazy as _
 class ProgrammingLanguage(models.Model):
     code = models.CharField(_("Code"), max_length=15, unique=True)
     name = models.CharField(_("Name"), max_length=63)
-    is_external = models.BooleanField(_("Is external resource"), default=False)
-    subresource_integrity_hash = models.CharField(
-        _("Subresource integrity hash"), max_length=64, blank=True
-    )
 
     class Meta:
         verbose_name = _("programming language")

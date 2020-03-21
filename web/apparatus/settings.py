@@ -265,6 +265,3 @@ if not DEBUG:
     LIBSASS_OUTPUT_STYLE = "compressed"
 
 APPARATUS_DISQUS_SITE = "apparatus-1"
-APPARATUS_CODESNIPPET_CDN_BASE_URL = (
-    "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build"
-)
