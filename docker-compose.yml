@@ -24,10 +24,9 @@ services:
     volumes:
     - "webdata:/var/www/apparatus"
   nginx:
-    image: "jasujm/apparatus-nginx"
+    image: "nginx:1.17"
     command: >-
-      /bin/bash -c "write-apparatus-conf.sh;
-      trap 'kill $$(jobs -p)' EXIT;
+      /bin/bash -c "trap 'kill $$(jobs -p)' EXIT;
       while :; do
         sleep 1d;
         nginx -s reload;
@@ -36,8 +35,6 @@ services:
     ports:
     - "80:80"
     - "443:443"
-    environment:
-    - "SERVER_NAME=localhost"
     volumes:
     - "webdata:/var/www/apparatus:ro"
     - "./nginx/inc.d:/etc/nginx/inc.d:ro"

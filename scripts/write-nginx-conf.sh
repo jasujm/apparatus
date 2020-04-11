@@ -1,6 +1,13 @@
 #!/bin/bash
 
-cat > /etc/nginx/conf.d/default.conf <<EOF
+server_name=${APPARATUS_SERVER_NAME}
+
+if [ ! $server_name ]; then
+    echo "APPARATUS_SERVER_NAME not set"
+    exit 1
+fi
+
+cat <<EOF
 server {
     listen       [::]:80 default_server;
     listen       80 default_server;
@@ -10,7 +17,7 @@ server {
 server {
     listen       [::]:80;
     listen       80;
-    server_name  .${SERVER_NAME} localhost 127.0.0.1;
+    server_name  .${server_name} localhost 127.0.0.1;
 
     location /.well-known/acme-challenge/ {
         root /var/www/certbot;
@@ -25,13 +32,12 @@ EOF
 # Only enable the HTTPS server serving the apparatus app if TLS certs
 # are found. This allows first exposing ACME endpoints via HTTP, and
 # then running the main website with the acquired certs.
-cert_directory_prefix="/etc/letsencrypt/live/${SERVER_NAME}"
-fullchain_file="${cert_directory_prefix}/fullchain.pem"
-privkey_file="${cert_directory_prefix}/privkey.pem"
-if [ -f "$fullchain_file" -a -f "${privkey_file}" ]; then
-    cat > /etc/nginx/conf.d/apparatus.conf <<EOF
-ssl_certificate      ${fullchain_file};
-ssl_certificate_key  ${privkey_file};
+cert_directory_prefix="/etc/letsencrypt/live/${server_name}"
+if [ "$1" == "tls" ]; then
+    cat <<EOF
+
+ssl_certificate      ${cert_directory_prefix}/fullchain.pem;
+ssl_certificate_key  ${cert_directory_prefix}/privkey.pem;
 include              /etc/nginx/inc.d/ssl.conf;
 include              /etc/nginx/inc.d/security_headers.conf;
 
@@ -44,14 +50,14 @@ server {
 server {
     listen       [::]:443 http2 ssl;
     listen       443 http2 ssl;
-    server_name  ${SERVER_NAME};
+    server_name  ${server_name};
     return       301 \$scheme://www.\$host\$request_uri;
 }
 
 server {
     listen       [::]:443 http2 ssl;
     listen       443 http2 ssl;
-    server_name  www.${SERVER_NAME} localhost 127.0.0.1;
+    server_name  www.${server_name} localhost 127.0.0.1;
     charset      utf-8;
 
     gzip             on;
