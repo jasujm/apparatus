@@ -13,5 +13,5 @@ RUN apt-get update && apt-get install --yes netcat && \
 WORKDIR /usr/src/apparatus
 COPY --from=builder /usr/src/apparatus/requirements.txt .
 RUN pip install -r requirements.txt
-COPY . /usr/src/apparatus/
+COPY src /usr/src/apparatus/
 CMD ["./start.sh"]

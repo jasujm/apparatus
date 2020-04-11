@@ -12,12 +12,12 @@ services:
     - "MYSQL_RANDOM_ROOT_PASSWORD=1"
     volumes:
     - "dbdata:/var/lib/mysql"
-  web:
-    image: "jasujm/apparatus-web"
+  apparatus:
+    image: "jasujm/apparatus"
     ports:
     - "8000:8000"
     environment:
-    - "ENV_PATH=/run/secrets/web-envfile"
+    - "ENV_PATH=/run/secrets/envfile"
     - "DATA_DIR=/var/www/apparatus"
     depends_on:
     - "mysql"
@@ -39,7 +39,7 @@ services:
     - "webdata:/var/www/apparatus:ro"
     - "./nginx/inc.d:/etc/nginx/inc.d:ro"
     depends_on:
-    - "web"
+    - "apparatus"
 volumes:
   dbdata:
   webdata:

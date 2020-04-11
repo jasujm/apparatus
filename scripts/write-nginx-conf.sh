@@ -65,7 +65,7 @@ server {
     gzip_min_length  1024;
 
     location / {
-        uwsgi_pass web:8000;
+        uwsgi_pass apparatus:8000;
         include /etc/nginx/uwsgi_params;
     }
 
