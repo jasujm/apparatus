@@ -25,6 +25,14 @@ services:
     - "webdata:/var/www/apparatus"
   nginx:
     image: "jasujm/apparatus-nginx"
+    command: >-
+      /bin/bash -c "write-apparatus-conf.sh;
+      trap 'kill $$(jobs -p)' EXIT;
+      while :; do
+        sleep 1d;
+        nginx -s reload;
+      done &
+      nginx -g 'daemon off;'"
     ports:
     - "80:80"
     - "443:443"

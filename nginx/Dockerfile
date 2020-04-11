@@ -1,4 +1,3 @@
 FROM nginx:1.17
 ADD conf /etc/nginx/
-COPY *.sh /usr/bin/
-CMD ["/usr/bin/start.sh"]
+COPY write-apparatus-conf.sh /usr/bin/
