@@ -1,5 +1,0 @@
-# Added for apparatus -- the mysql client in web container is not new
-# enough to support caching_sha2_password
-
-[mysqld]
-default-authentication-plugin = mysql_native_password
