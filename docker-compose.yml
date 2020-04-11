@@ -40,6 +40,7 @@ services:
     - "SERVER_NAME=localhost"
     volumes:
     - "webdata:/var/www/apparatus:ro"
+    - "./nginx/inc.d:/etc/nginx/inc.d:ro"
     depends_on:
     - "web"
 volumes:
