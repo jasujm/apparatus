@@ -1,6 +1,5 @@
 # Checklist
 # - Add ./env/secrets/mysql/mysql-apparatus-user and ./env/secrets/mysql/mysql-apparatus-password
-# - Add correct domains to ALLOWED_HOSTS
 # - Add ./env/secrets/apparatus/envfile containing SECRET_KEY and DATABASE_URL
 
 version: "3"
@@ -9,7 +8,5 @@ services:
     volumes:
     - "./env/secrets/mysql:/run/secrets:ro"
   apparatus:
-    environment:
-    - "ALLOWED_HOSTS=127.0.0.1,::,localhost, ### "
     volumes:
     - "./env/secrets/apparatus:/run/secrets:ro"

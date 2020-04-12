@@ -19,6 +19,7 @@ services:
     environment:
     - "ENV_PATH=/run/secrets/envfile"
     - "DATA_DIR=/var/www/apparatus"
+    - "ALLOWED_HOSTS=127.0.0.1,::,localhost,www.${APPARATUS_SERVER_NAME}"
     depends_on:
     - "mysql"
     volumes:
