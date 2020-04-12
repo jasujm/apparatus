@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$(git rev-parse --show-toplevel)" != "$(pwd)" ]; then
+    echo "This command must be run from the top level directory"
+    exit 1
+fi
+
 server_name=${APPARATUS_SERVER_NAME}
 
 if [ ! $server_name ]; then
@@ -32,8 +37,8 @@ EOF
 # Only enable the HTTPS server serving the apparatus app if TLS certs
 # are found. This allows first exposing ACME endpoints via HTTP, and
 # then running the main website with the acquired certs.
-cert_directory_prefix="/etc/letsencrypt/live/${server_name}"
 if [ "$1" == "tls" ]; then
+    cert_directory_prefix="/etc/letsencrypt/live/${server_name}"
     cat <<EOF
 
 ssl_certificate      ${cert_directory_prefix}/fullchain.pem;
