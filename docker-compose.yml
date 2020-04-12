@@ -12,6 +12,7 @@ services:
     - "MYSQL_RANDOM_ROOT_PASSWORD=1"
     volumes:
     - "dbdata:/var/lib/mysql"
+    - "${APPARATUS_SECRETS_DIR}/mysql:/run/secrets:ro"
   apparatus:
     image: "jasujm/apparatus"
     ports:
@@ -24,6 +25,7 @@ services:
     - "mysql"
     volumes:
     - "webdata:/var/www/apparatus"
+    - "${APPARATUS_SECRETS_DIR}/apparatus:/run/secrets:ro"
   nginx:
     image: "nginx:1.17"
     command: >-
@@ -39,6 +41,7 @@ services:
     volumes:
     - "webdata:/var/www/apparatus:ro"
     - "./nginx/inc.d:/etc/nginx/inc.d:ro"
+    - "${APPARATUS_NGINX_CONF_DIR}:/etc/nginx/conf.d:ro"
     depends_on:
     - "apparatus"
 volumes:
