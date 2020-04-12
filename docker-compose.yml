@@ -42,7 +42,7 @@ services:
     - "webdata:/var/www/apparatus:ro"
     - "./nginx/inc.d:/etc/nginx/inc.d:ro"
     - "${APPARATUS_NGINX_CONF_DIR}:/etc/nginx/conf.d:ro"
-    - "${APPARATUS_NGINX_SSL_DIR}:/etc/letsencrypt:ro"
+    - "certbotetc:/etc/letsencrypt:ro"
     - "certbotwww:/var/www/certbot:ro"
     depends_on:
     - "apparatus"
@@ -55,7 +55,7 @@ services:
         sleep 1d;
       done;"
     volumes:
-    - "${APPARATUS_NGINX_SSL_DIR}:/etc/letsencrypt"
+    - "certbotetc:/etc/letsencrypt"
     - "certbotwww:/var/www/certbot"
     depends_on:
     - "nginx"
