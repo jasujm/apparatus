@@ -18,7 +18,7 @@ if [ ! $nginx_conf_dir ]; then
     exit 1
 fi
 
-if docker-compose -f docker-compose.yml -f docker-compose.certbot.yml run -T --rm nginx test -d /etc/letsencrypt/live/${server_name}; then
+if docker-compose run -T --rm nginx test -d /etc/letsencrypt/live/${server_name}; then
     echo "TLS certificate found"
     write_nginx_config_arg=tls
 else
@@ -28,6 +28,6 @@ fi
 
 scripts/write-nginx-conf.sh $write_nginx_config_arg > ${nginx_conf_dir}/default.conf
 
-docker-compose -f docker-compose.yml -f docker-compose.certbot.yml build --pull
-docker-compose -f docker-compose.yml -f docker-compose.certbot.yml up -d
+docker-compose build --pull
+docker-compose up -d
 docker-compose exec nginx /bin/bash -c "nginx -s reload"

@@ -42,8 +42,25 @@ services:
     - "webdata:/var/www/apparatus:ro"
     - "./nginx/inc.d:/etc/nginx/inc.d:ro"
     - "${APPARATUS_NGINX_CONF_DIR}:/etc/nginx/conf.d:ro"
+    - "${APPARATUS_NGINX_SSL_DIR}:/etc/letsencrypt:ro"
+    - "certbotwww:/var/www/certbot:ro"
     depends_on:
     - "apparatus"
+  certbot:
+    image: "certbot/certbot"
+    entrypoint: >-
+      /bin/sh -c "trap exit TERM;
+      while :;
+        do certbot renew;
+        sleep 1d;
+      done;"
+    volumes:
+    - "${APPARATUS_NGINX_SSL_DIR}:/etc/letsencrypt"
+    - "certbotwww:/var/www/certbot"
+    depends_on:
+    - "nginx"
 volumes:
   dbdata:
   webdata:
+  certbotetc:
+  certbotwww:
