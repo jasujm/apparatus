@@ -46,6 +46,10 @@ ssl_certificate_key  ${cert_directory_prefix}/privkey.pem;
 include              /etc/nginx/inc.d/ssl.conf;
 include              /etc/nginx/inc.d/security_headers.conf;
 
+upstream apparatus {
+    server apparatus:8000;
+}
+
 server {
     listen       [::]:443 ssl default_server;
     listen       443 ssl default_server;
@@ -70,7 +74,7 @@ server {
     gzip_min_length  1024;
 
     location / {
-        uwsgi_pass apparatus:8000;
+        uwsgi_pass apparatus;
         include /etc/nginx/uwsgi_params;
     }
 

@@ -44,8 +44,6 @@ services:
     - "${APPARATUS_NGINX_CONF_DIR}:/etc/nginx/conf.d:ro"
     - "certbotetc:/etc/letsencrypt:ro"
     - "certbotwww:/var/www/certbot:ro"
-    depends_on:
-    - "apparatus"
   certbot:
     image: "certbot/certbot"
     entrypoint: >-
