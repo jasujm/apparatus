@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source scripts/include/functions.sh
+source $(dirname $0)/include/functions.sh
 
 if [ ! $server_name ]; then
     echo "APPARATUS_SERVER_NAME not set"

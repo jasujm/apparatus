@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source scripts/include/functions.sh
+source $(dirname $0)/include/functions.sh
 
 mkdir -p $nginx_conf_dir ${secrets_dir}/{mysql,apparatus}
 
