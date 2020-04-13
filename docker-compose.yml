@@ -15,6 +15,7 @@ services:
     - "${APPARATUS_SECRETS_DIR}/mysql:/run/secrets:ro"
   apparatus:
     image: "jasujm/apparatus"
+    build: "."
     ports:
     - "8000:8000"
     environment:
