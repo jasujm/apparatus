@@ -20,7 +20,7 @@ docker-compose --version
 echo 'Cloning apparatus from GitHub...'
 git clone https://github.com/jasujm/apparatus.git
 
-echo 'All set! Checklist:'
-echo '- Populate secrets and production settings for docker-compose'
+echo 'All set! You can now run scripts/install.sh in the git root.'
+echo '- Run scripts/setup-env.sh'
 echo '- Run scripts/run-apparatus.sh'
 echo '- Run scripts/get-certs.sh'
