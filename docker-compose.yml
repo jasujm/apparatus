@@ -13,6 +13,7 @@ services:
     volumes:
     - "dbdata:/var/lib/mysql"
     - "${APPARATUS_SECRETS_DIR}/mysql:/run/secrets:ro"
+    restart: "on-failure"
   apparatus:
     image: "jasujm/apparatus"
     build: "."
@@ -27,6 +28,7 @@ services:
     volumes:
     - "webdata:/var/www/apparatus"
     - "${APPARATUS_SECRETS_DIR}/apparatus:/run/secrets:ro"
+    restart: "on-failure"
   nginx:
     image: "nginx:1.17"
     command: >-
@@ -45,6 +47,7 @@ services:
     - "${APPARATUS_NGINX_CONF_DIR}:/etc/nginx/conf.d:ro"
     - "certbotetc:/etc/letsencrypt:ro"
     - "certbotwww:/var/www/certbot:ro"
+    restart: "on-failure"
   certbot:
     image: "certbot/certbot"
     entrypoint: >-
@@ -58,6 +61,7 @@ services:
     - "certbotwww:/var/www/certbot"
     depends_on:
     - "nginx"
+    restart: "on-failure"
 volumes:
   dbdata:
   webdata:
