@@ -1,0 +1,21 @@
+.fpdemo {
+    .controls {
+        font-size: 1.2em;
+    }
+    .population {
+        .box {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            font-size: 20px;
+            border: 1px solid;
+            text-align: center;
+        }
+        .negative {
+            background-color: #FFC632;
+        }
+        .positive {
+            background-color: #62BDFF;
+        }
+    }
+}

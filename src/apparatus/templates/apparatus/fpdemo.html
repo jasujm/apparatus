@@ -1,0 +1,38 @@
+{% load sekizai_tags static compress %}
+<div class="row fpdemo">
+    <div class="col-md-4">
+        <div class="controls">
+            <input id="fpdemo-sensitivity-control" type="hidden" value="{{ instance.sensitivity }}">
+            <input id="fpdemo-specificity-control" type="hidden" value="{{ instance.specificity }}">
+            <div class="form-group">
+                <label for="fpdemo-prevalence-control">Säädä vasta-aineiden yleisyyttä</label>
+                <input id="fpdemo-prevalence-control" type="range" min="1" max="100" value="{{ instance.prevalence_percentage }}" class="form-control"></input>
+            </div>
+            <p>Testin herkkyys: <span class="fpdemo-sensitivity"></span></p>
+            <p>Testin tarkkuus: <span class="fpdemo-specificity"></span></p>
+            <p>Vasta-aineellisten osuus: <span class="fpdemo-prevalence"></span></p>
+            <p>Väärien positiivisten osuus: <span class="fpdemo-fdr"></span></p>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div id="fpdemo-population"></div>
+    </div>
+</div>
+{% addtoblock "css" %}{% compress css file fpdemo %}
+<link rel="stylesheet" type="text/x-scss" href="{% static "apparatus/css/fpdemo.scss" %}">
+{% endcompress %}{% endaddtoblock %}
+{% addtoblock "js" %}{% compress js file fpdemo %}
+<script src="{% static "apparatus/js/fpdemo.js" %}"></script>
+<script>
+    $(document).ready(function() {
+        const sensitivity = parseFloat($("#fpdemo-sensitivity-control").val());
+        const specificity = parseFloat($("#fpdemo-specificity-control").val());
+        const prevalence_control = $("#fpdemo-prevalence-control");
+        prevalence_control.change(function() {
+            const p = $(this).val() / 100.0;
+            $("#fpdemo-population").fpdemo(p, sensitivity, specificity);
+        }).trigger("change");
+        $(window).resize(function() { prevalence_control.trigger("change"); });
+    });
+</script>
+{% endcompress %}{% endaddtoblock %}
