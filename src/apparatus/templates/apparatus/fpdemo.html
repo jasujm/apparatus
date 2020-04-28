@@ -1,12 +1,12 @@
-{% load sekizai_tags static compress %}
+{% load sekizai_tags static compress l10n %}
 <div class="row fpdemo">
     <div class="col-md-4">
         <div class="controls">
-            <input id="fpdemo-sensitivity-control" type="hidden" value="{{ instance.sensitivity }}">
-            <input id="fpdemo-specificity-control" type="hidden" value="{{ instance.specificity }}">
+            <input id="fpdemo-sensitivity-control" type="hidden" value="{{ instance.sensitivity|unlocalize }}">
+            <input id="fpdemo-specificity-control" type="hidden" value="{{ instance.specificity|unlocalize }}">
             <div class="form-group">
                 <label for="fpdemo-prevalence-control">Säädä vasta-aineiden yleisyyttä</label>
-                <input id="fpdemo-prevalence-control" type="range" min="1" max="100" value="{{ instance.prevalence_percentage }}" class="form-control"></input>
+                <input id="fpdemo-prevalence-control" type="range" min="1" max="100" value="{{ instance.prevalence_percentage|unlocalize }}" class="form-control"></input>
             </div>
             <p>Testin herkkyys: <span class="fpdemo-sensitivity"></span></p>
             <p>Testin tarkkuus: <span class="fpdemo-specificity"></span></p>
