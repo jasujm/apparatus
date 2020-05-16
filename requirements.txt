@@ -43,7 +43,7 @@ djangocms-link==2.5.0     # via -r requirements.in, djangocms-bootstrap4
 djangocms-page-meta==0.10.0  # via -r requirements.in
 djangocms-picture==2.3.0  # via -r requirements.in, djangocms-bootstrap4
 djangocms-style==2.2.0    # via -r requirements.in
-djangocms-text-ckeditor==3.8.0  # via -r requirements.in, djangocms-blog, djangocms-bootstrap4
+djangocms-text-ckeditor==3.9.0  # via -r requirements.in, djangocms-blog, djangocms-bootstrap4
 djangocms-video==2.2.0    # via -r requirements.in
 easy-thumbnails==2.7      # via -r requirements.in, django-filer, djangocms-blog, djangocms-picture
 html5lib==1.0.1           # via -r requirements.in, django-htmlmin, djangocms-text-ckeditor
