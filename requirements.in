@@ -23,7 +23,7 @@ pytz
 
 # Other requirements
 html5lib>=1.0.1
-git+https://github.com/jasujm/djangocms-blog.git@apparatus#egg=djangocms-blog
+https://github.com/jasujm/djangocms-blog/archive/d2780d92a7a9a59419ee2af742cda2ee3e5ea4c6.zip#egg=djangocms-blog
 uwsgi
 django-environ
 mysqlclient
