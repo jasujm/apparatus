@@ -8,10 +8,10 @@ aldryn-apphooks-config==0.6.0 \
     --hash=sha256:0e72cfed9a6fd15bb0bba0da4cd4f10351b8f56f2b0f22c6fbca78fd3fa1fb72 \
     --hash=sha256:28198847bbd2ca1d4ed5ae5d2c029de0f63a655c533d764f3c6bc99ec84d8590 \
     # via djangocms-blog
-beautifulsoup4==4.9.0 \
-    --hash=sha256:594ca51a10d2b3443cbac41214e12dbb2a1cd57e1a7344659849e2e20ba6a8d8 \
-    --hash=sha256:a4bbe77fd30670455c5296242967a123ec28c37e9702a8a81bd2f20a4baf0368 \
-    --hash=sha256:d4e96ac9b0c3a6d3f0caae2e4124e6055c5dcafde8e2f831ff194c104f0775a0 \
+beautifulsoup4==4.9.1 \
+    --hash=sha256:73cc4d115b96f79c7d77c1c7f7a0a8d4c57860d1041df407dd1aae7f07a77fd7 \
+    --hash=sha256:a6237df3c32ccfaee4fd201c8f5f9d9df619b93121d01353a64a73ce8c6ef9a8 \
+    --hash=sha256:e718f2342e2e099b640a34ab782407b7b676f47ee272d6739e60b8ea23829f2c \
     # via django-htmlmin
 django-appconf==1.0.4 \
     --hash=sha256:1b1d0e1069c843ebe8ae5aa48ec52403b1440402b320c3e3a206a0907e97bb06 \
@@ -23,9 +23,9 @@ django-appdata==0.3.0 \
 django-classy-tags==1.0.0 \
     --hash=sha256:ad6a25fc2b58a098f00d86bd5e5dad47922f5ca4e744bc3cccb7b4be5bc35eb1 \
     # via -r requirements.in, django-cms, django-sekizai
-django-cms==3.7.2 \
-    --hash=sha256:9e65be1d7797a916fba2c11b034f221567cedff529e352f348e604ac36ea7faf \
-    --hash=sha256:c925807274ac1a02175d7a9478f6f0c306692d2dff60ac885d771e98acc58197 \
+django-cms==3.7.3 \
+    --hash=sha256:a93c0ceabf4ae29e6b4a7c18d538f26370e8375a9852dac2a1428ebb876ff606 \
+    --hash=sha256:d6ea9c71835cda065e12b7ae09f7b0db6b28cb1b4891f96c6d0baceb83012113 \
     # via -r requirements.in, aldryn-apphooks-config, djangocms-apphook-setup, djangocms-attributes-field, djangocms-blog, djangocms-bootstrap4, djangocms-file, djangocms-googlemap, djangocms-icon, djangocms-link, djangocms-page-meta, djangocms-picture, djangocms-style, djangocms-text-ckeditor, djangocms-video
 django-compressor==2.4 \
     --hash=sha256:57ac0a696d061e5fc6fbc55381d2050f353b973fb97eee5593f39247bc0f30af \
@@ -90,9 +90,9 @@ django-taggit-templatetags==0.2.5 \
     --hash=sha256:20441941d1316a4347e21f2aabef177d982f2d5394e4deefefde219bdd7c4a77 \
     --hash=sha256:9c5eea1d6e4f350176cdc86e6cbdbb26b6efd64b22b43ca89cae6357a9af829e \
     # via djangocms-blog
-django-taggit==1.2.0 \
-    --hash=sha256:4186a6ce1e1e9af5e2db8dd3479c5d31fa11a87d216a2ce5089ba3afde24a2c5 \
-    --hash=sha256:bd1ec80b813d60adadaa94dcce4bfd971cb4ae717b07e69fedbd38d417deb6e9 \
+django-taggit==1.3.0 \
+    --hash=sha256:4a833bf71f4c2deddd9745924eee53be1c075d7f0020a06f12e29fa3d752732d \
+    --hash=sha256:609b0223d8a652f3fae088b7fd29f294fdadaca2d7931d45c27d6c59b02fdf31 \
     # via django-taggit-autosuggest, django-taggit-templatetags, djangocms-blog
 django-templatetag-sugar==1.0 \
     --hash=sha256:90beafe5bc84686c328dcf685ce9f59f814104efd9a1fb5fb826e3ee3b7c2626 \
@@ -144,8 +144,9 @@ djangocms-picture==2.4.0 \
 djangocms-style==2.3.0 \
     --hash=sha256:8d4a104d94bf0c3637d2675ad15e112fd60e3dba415b3b99e7e1d1f0c23f6b92 \
     # via -r requirements.in
-djangocms-text-ckeditor==3.9.0 \
-    --hash=sha256:b29197499e0836e7c8726f5598a3d4e7fbdc38638739bdd0f492d03bd96c52ca \
+djangocms-text-ckeditor==3.9.1 \
+    --hash=sha256:1b5cf7ec65d48f915c019d0c8ecb4f67d414971691c9d91924f694a2b40ec83b \
+    --hash=sha256:b3a27a930343f80dc53c327410d314922a48b88adc7083669ffa4c5c745dd00b \
     # via -r requirements.in, djangocms-blog, djangocms-bootstrap4
 djangocms-video==2.3.0 \
     --hash=sha256:5fe8d0ddbe95f61ad0ab6f98c91193825cb1d47751a1885beeb3f153b8e63a22 \
@@ -172,34 +173,34 @@ libsass==0.20.0 \
     --hash=sha256:e6a547c0aa731dcb4ed71f198e814bee0400ce04d553f3f12a53bc3a17f2a481 \
     --hash=sha256:fd19c8f73f70ffc6cbcca8139da08ea9a71fc48e7dfc4bb236ad88ab2d6558f1 \
     # via django-libsass
-lxml==4.5.0 \
-    --hash=sha256:06d4e0bbb1d62e38ae6118406d7cdb4693a3fa34ee3762238bcb96c9e36a93cd \
-    --hash=sha256:0701f7965903a1c3f6f09328c1278ac0eee8f56f244e66af79cb224b7ef3801c \
-    --hash=sha256:1f2c4ec372bf1c4a2c7e4bb20845e8bcf8050365189d86806bad1e3ae473d081 \
-    --hash=sha256:4235bc124fdcf611d02047d7034164897ade13046bda967768836629bc62784f \
-    --hash=sha256:5828c7f3e615f3975d48f40d4fe66e8a7b25f16b5e5705ffe1d22e43fb1f6261 \
-    --hash=sha256:585c0869f75577ac7a8ff38d08f7aac9033da2c41c11352ebf86a04652758b7a \
-    --hash=sha256:5d467ce9c5d35b3bcc7172c06320dddb275fea6ac2037f72f0a4d7472035cea9 \
-    --hash=sha256:63dbc21efd7e822c11d5ddbedbbb08cd11a41e0032e382a0fd59b0b08e405a3a \
-    --hash=sha256:7bc1b221e7867f2e7ff1933165c0cec7153dce93d0cdba6554b42a8beb687bdb \
-    --hash=sha256:8620ce80f50d023d414183bf90cc2576c2837b88e00bea3f33ad2630133bbb60 \
-    --hash=sha256:8a0ebda56ebca1a83eb2d1ac266649b80af8dd4b4a3502b2c1e09ac2f88fe128 \
-    --hash=sha256:90ed0e36455a81b25b7034038e40880189169c308a3df360861ad74da7b68c1a \
-    --hash=sha256:95e67224815ef86924fbc2b71a9dbd1f7262384bca4bc4793645794ac4200717 \
-    --hash=sha256:afdb34b715daf814d1abea0317b6d672476b498472f1e5aacbadc34ebbc26e89 \
-    --hash=sha256:b4b2c63cc7963aedd08a5f5a454c9f67251b1ac9e22fd9d72836206c42dc2a72 \
-    --hash=sha256:d068f55bda3c2c3fcaec24bd083d9e2eede32c583faf084d6e4b9daaea77dde8 \
-    --hash=sha256:d5b3c4b7edd2e770375a01139be11307f04341ec709cf724e0f26ebb1eef12c3 \
-    --hash=sha256:deadf4df349d1dcd7b2853a2c8796593cc346600726eff680ed8ed11812382a7 \
-    --hash=sha256:df533af6f88080419c5a604d0d63b2c33b1c0c4409aba7d0cb6de305147ea8c8 \
-    --hash=sha256:e4aa948eb15018a657702fee0b9db47e908491c64d36b4a90f59a64741516e77 \
-    --hash=sha256:e5d842c73e4ef6ed8c1bd77806bf84a7cb535f9c0cf9b2c74d02ebda310070e1 \
-    --hash=sha256:ebec08091a22c2be870890913bdadd86fcd8e9f0f22bcb398abd3af914690c15 \
-    --hash=sha256:edc15fcfd77395e24543be48871c251f38132bb834d9fdfdad756adb6ea37679 \
-    --hash=sha256:f2b74784ed7e0bc2d02bd53e48ad6ba523c9b36c194260b7a5045071abbb1012 \
-    --hash=sha256:fa071559f14bd1e92077b1b5f6c22cf09756c6de7139370249eb372854ce51e6 \
-    --hash=sha256:fd52e796fee7171c4361d441796b64df1acfceb51f29e545e812f16d023c4bbc \
-    --hash=sha256:fe976a0f1ef09b3638778024ab9fb8cde3118f203364212c198f71341c0715ca \
+lxml==4.5.1 \
+    --hash=sha256:06748c7192eab0f48e3d35a7adae609a329c6257495d5e53878003660dc0fec6 \
+    --hash=sha256:0790ddca3f825dd914978c94c2545dbea5f56f008b050e835403714babe62a5f \
+    --hash=sha256:1aa7a6197c1cdd65d974f3e4953764eee3d9c7b67e3966616b41fab7f8f516b7 \
+    --hash=sha256:22c6d34fdb0e65d5f782a4d1a1edb52e0a8365858dafb1c08cb1d16546cf0786 \
+    --hash=sha256:2754d4406438c83144f9ffd3628bbe2dcc6d62b20dbc5c1ec4bc4385e5d44b42 \
+    --hash=sha256:27ee0faf8077c7c1a589573b1450743011117f1aa1a91d5ae776bbc5ca6070f2 \
+    --hash=sha256:2b02c106709466a93ed424454ce4c970791c486d5fcdf52b0d822a7e29789626 \
+    --hash=sha256:2d1ddce96cf15f1254a68dba6935e6e0f1fe39247de631c115e84dd404a6f031 \
+    --hash=sha256:4f282737d187ae723b2633856085c31ae5d4d432968b7f3f478a48a54835f5c4 \
+    --hash=sha256:51bb4edeb36d24ec97eb3e6a6007be128b720114f9a875d6b370317d62ac80b9 \
+    --hash=sha256:7eee37c1b9815e6505847aa5e68f192e8a1b730c5c7ead39ff317fde9ce29448 \
+    --hash=sha256:7fd88cb91a470b383aafad554c3fe1ccf6dfb2456ff0e84b95335d582a799804 \
+    --hash=sha256:9144ce36ca0824b29ebc2e02ca186e54040ebb224292072250467190fb613b96 \
+    --hash=sha256:925baf6ff1ef2c45169f548cc85204433e061360bfa7d01e1be7ae38bef73194 \
+    --hash=sha256:a636346c6c0e1092ffc202d97ec1843a75937d8c98aaf6771348ad6422e44bb0 \
+    --hash=sha256:a87dbee7ad9dce3aaefada2081843caf08a44a8f52e03e0a4cc5819f8398f2f4 \
+    --hash=sha256:a9e3b8011388e7e373565daa5e92f6c9cb844790dc18e43073212bb3e76f7007 \
+    --hash=sha256:afb53edf1046599991fb4a7d03e601ab5f5422a5435c47ee6ba91ec3b61416a6 \
+    --hash=sha256:b26719890c79a1dae7d53acac5f089d66fd8cc68a81f4e4bd355e45470dc25e1 \
+    --hash=sha256:b7462cdab6fffcda853338e1741ce99706cdf880d921b5a769202ea7b94e8528 \
+    --hash=sha256:b77975465234ff49fdad871c08aa747aae06f5e5be62866595057c43f8d2f62c \
+    --hash=sha256:c47a8a5d00060122ca5908909478abce7bbf62d812e3fc35c6c802df8fb01fe7 \
+    --hash=sha256:c79e5debbe092e3c93ca4aee44c9a7631bdd407b2871cb541b979fd350bbbc29 \
+    --hash=sha256:d8d40e0121ca1606aa9e78c28a3a7d88a05c06b3ca61630242cded87d8ce55fa \
+    --hash=sha256:ee2be8b8f72a2772e72ab926a3bccebf47bb727bda41ae070dc91d1fb759b726 \
+    --hash=sha256:f95d28193c3863132b1f55c1056036bf580b5a488d908f7d22a04ace8935a3a9 \
+    --hash=sha256:fadd2a63a2bfd7fb604508e553d1cf68eca250b2fbdbd81213b5f6f2fbf23529 \
     # via djangocms-blog
 mysqlclient==1.4.6 \
     --hash=sha256:4c82187dd6ab3607150fbb1fa5ef4643118f3da122b8ba31c3149ddd9cf0cb39 \
@@ -253,9 +254,9 @@ rjsmin==1.1.0 \
     --hash=sha256:e487a7783ac4339e79ec610b98228eb9ac72178973e3dee16eba0e3feef25924 \
     --hash=sha256:ecd29f1b3e66a4c0753105baec262b331bcbceefc22fbe6f7e8bcd2067bcb4d7 \
     # via django-compressor
-six==1.14.0 \
-    --hash=sha256:236bdbdce46e6e6a3d61a337c0f8b763ca1e8717c03b369e87a7ec7ce1319c0a \
-    --hash=sha256:8f3cd2e254d8f793e7f3d6d9df77b92252b52637291d0f0da013c76ea2724b6c \
+six==1.15.0 \
+    --hash=sha256:30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259 \
+    --hash=sha256:8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced \
     # via -r requirements.in, django-appdata, django-classy-tags, django-cms, django-compressor, django-filer, django-meta, django-parler, django-sekizai, html5lib, libsass
 soupsieve==2.0.1 \
     --hash=sha256:1634eea42ab371d3d346309b93df7870a88610f0725d47528be902a0d95ecc55 \
