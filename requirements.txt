@@ -101,9 +101,9 @@ django-templatetag-sugar==1.0 \
 django-treebeard==4.3.1 \
     --hash=sha256:83aebc34a9f06de7daaec330d858d1c47887e81be3da77e3541fe7368196dd8a \
     # via -r requirements.in, django-cms
-django==2.2.12 \
-    --hash=sha256:69897097095f336d5aeef45b4103dceae51c00afa6d3ae198a2a18e519791b7a \
-    --hash=sha256:6ecd229e1815d4fc5240fc98f1cca78c41e7a8cd3e3f2eefadc4735031077916 \
+django==2.2.13 \
+    --hash=sha256:84f370f6acedbe1f3c41e1a02de44ac206efda3355e427139ecb785b5f596d80 \
+    --hash=sha256:e8fe3c2b2212dce6126becab7a693157f1a441a07b62ec994c046c76af5bb66d \
     # via -r requirements.in, django-appconf, django-appdata, django-classy-tags, django-cms, django-debug-toolbar, django-filer, django-formtools, django-fullurl, django-mptt, django-polymorphic, django-sekizai, django-taggit, django-taggit-templatetags, django-treebeard, easy-thumbnails
 djangocms-admin-style==1.5.0 \
     --hash=sha256:47d9868aa448e593ce90059d6542a4d907c120d357cd0561c586f5557e3ba316 \
