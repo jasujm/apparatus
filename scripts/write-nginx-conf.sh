@@ -95,6 +95,10 @@ server {
     location = /favicon.ico {
         return 404;
     }
+
+    location = /luntti {
+        return 303 https://gist.github.com/jasujm/cc68976a586f959cb008a824ddd63784;
+    }
 }
 EOF
 fi
