@@ -7,6 +7,11 @@ if [ ! $server_name ]; then
     exit 1
 fi
 
+if [ ! $server_alt_name ]; then
+    echo "APPARATUS_SERVER_ALT_NAME not set"
+    exit 1
+fi
+
 cat <<EOF
 server {
     listen       [::]:80 default_server;
@@ -17,7 +22,7 @@ server {
 server {
     listen       [::]:80;
     listen       80;
-    server_name  .${server_name} localhost 127.0.0.1;
+    server_name  .${server_name} ${server_alt_name} localhost 127.0.0.1;
 
     location /.well-known/acme-challenge/ {
         root /var/www/certbot;
@@ -56,6 +61,13 @@ server {
     listen       443 http2 ssl;
     server_name  ${server_name};
     return       301 \$scheme://www.\$host\$request_uri;
+}
+
+server {
+    listen       [::]:443 http2 ssl;
+    listen       443 http2 ssl;
+    server_name  ${server_alt_name};
+    return       307 \$scheme://${server_name}\$request_uri;
 }
 
 server {
