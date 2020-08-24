@@ -68,9 +68,8 @@ django-mptt==0.11.0 \
     --hash=sha256:90eb236eb4f1a92124bd7c37852bbe09c0d21158477cc237556d59842a91c509 \
     --hash=sha256:dfdb3af75ad27cdd4458b0544ec8574174f2b90f99bc2cafab6a15b4bc1895a8 \
     # via -r requirements.in, django-filer
-django-parler==2.0.1 \
-    --hash=sha256:0e7e10d8f26bcdc25107e893651f073fb4cf1f382c5a994a48559b22f44b471e \
-    --hash=sha256:f633522c06727852978cf2f92c94a98d900dff47235412e64ed46d63e68b1f09 \
+django-parler==2.1 \
+    --hash=sha256:b634db2c63d1a62ed18b7fc40247a2833f1bbfd1f197ff3bdfaf004011669082 \
     # via djangocms-blog
 django-polymorphic==2.1.2 \
     --hash=sha256:0a25058e95e5e99fe0beeabb8f4734effe242d7b5b77dca416fba9fd3062da6a \
@@ -102,9 +101,9 @@ django-templatetag-sugar==1.0 \
 django-treebeard==4.3.1 \
     --hash=sha256:83aebc34a9f06de7daaec330d858d1c47887e81be3da77e3541fe7368196dd8a \
     # via -r requirements.in, django-cms
-django==2.2.14 \
-    --hash=sha256:edf0ecf6657713b0435b6757e6069466925cae70d634a3283c96b80c01e06191 \
-    --hash=sha256:f2250bd35d0f6c23e930c544629934144e5dd39a4c06092e1050c731c1712ba8 \
+django==2.2.15 \
+    --hash=sha256:3e2f5d172215862abf2bac3138d8a04229d34dbd2d0dab42c6bf33876cc22323 \
+    --hash=sha256:91f540000227eace0504a24f508de26daa756353aa7376c6972d7920bc339a3a \
     # via -r requirements.in, django-appconf, django-appdata, django-classy-tags, django-cms, django-debug-toolbar, django-filer, django-formtools, django-fullurl, django-mptt, django-polymorphic, django-sekizai, django-taggit, django-taggit-templatetags, django-treebeard, easy-thumbnails
 djangocms-admin-style==1.5.0 \
     --hash=sha256:47d9868aa448e593ce90059d6542a4d907c120d357cd0561c586f5557e3ba316 \
@@ -145,9 +144,8 @@ djangocms-picture==2.4.0 \
 djangocms-style==2.3.0 \
     --hash=sha256:8d4a104d94bf0c3637d2675ad15e112fd60e3dba415b3b99e7e1d1f0c23f6b92 \
     # via -r requirements.in
-djangocms-text-ckeditor==3.9.1 \
-    --hash=sha256:1b5cf7ec65d48f915c019d0c8ecb4f67d414971691c9d91924f694a2b40ec83b \
-    --hash=sha256:b3a27a930343f80dc53c327410d314922a48b88adc7083669ffa4c5c745dd00b \
+djangocms-text-ckeditor==3.10.0 \
+    --hash=sha256:905fa0cfbd244fb3a12657f89b083bfb57554ba35f4358972eebc6d78f8d8c3d \
     # via -r requirements.in, djangocms-blog, djangocms-bootstrap4
 djangocms-video==2.3.0 \
     --hash=sha256:5fe8d0ddbe95f61ad0ab6f98c91193825cb1d47751a1885beeb3f153b8e63a22 \
@@ -231,11 +229,13 @@ pillow==7.2.0 \
     --hash=sha256:94cf49723928eb6070a892cb39d6c156f7b5a2db4e8971cb958f7b6b104fb4c4 \
     --hash=sha256:97f9e7953a77d5a70f49b9a48da7776dc51e9b738151b22dacf101641594a626 \
     --hash=sha256:9ad7f865eebde135d526bb3163d0b23ffff365cf87e767c649550964ad72785d \
+    --hash=sha256:9c87ef410a58dd54b92424ffd7e28fd2ec65d2f7fc02b76f5e9b2067e355ebf6 \
     --hash=sha256:a060cf8aa332052df2158e5a119303965be92c3da6f2d93b6878f0ebca80b2f6 \
     --hash=sha256:c79f9c5fb846285f943aafeafda3358992d64f0ef58566e23484132ecd8d7d63 \
     --hash=sha256:c92302a33138409e8f1ad16731568c55c9053eee71bb05b6b744067e1b62380f \
     --hash=sha256:d08b23fdb388c0715990cbc06866db554e1822c4bdcf6d4166cf30ac82df8c41 \
     --hash=sha256:d350f0f2c2421e65fbc62690f26b59b0bcda1b614beb318c81e38647e0f673a1 \
+    --hash=sha256:e901964262a56d9ea3c2693df68bc9860b8bdda2b04768821e4c44ae797de117 \
     --hash=sha256:ec29604081f10f16a7aea809ad42e27764188fc258b02259a03a8ff7ded3808d \
     --hash=sha256:edf31f1150778abd4322444c393ab9c7bd2af271dd4dafb4208fb613b1f3cdc9 \
     --hash=sha256:f7e30c27477dffc3e85c2463b3e649f751789e0f6c8456099eea7ddd53be4a8a \
