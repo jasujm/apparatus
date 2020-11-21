@@ -24,7 +24,7 @@ pytz
 
 # Other requirements
 html5lib>=1.0.1
-djangocms-blog>=1.2<1.3
+djangocms-blog>=1.2,<1.3
 uwsgi
 django-environ
 mysqlclient
