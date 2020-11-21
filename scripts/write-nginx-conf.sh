@@ -86,6 +86,7 @@ server {
     }
 
     location /static {
+        access_log off;
         root /var/www/apparatus;
 
         location /static/CACHE {
@@ -97,14 +98,17 @@ server {
     }
 
     location /media {
+        access_log off;
         root /var/www/apparatus;
     }
 
     location = /robots.txt {
+        access_log off;
         return 404;
     }
 
     location = /favicon.ico {
+        access_log off;
         return 404;
     }
 
