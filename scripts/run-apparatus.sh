@@ -17,6 +17,6 @@ fi
 
 scripts/write-nginx-conf.sh $write_nginx_config_arg > ${nginx_conf_dir}/default.conf
 
-docker-compose build --pull
+docker-compose pull
 docker-compose up -d
 docker-compose exec nginx /bin/bash -c "nginx -s reload"
