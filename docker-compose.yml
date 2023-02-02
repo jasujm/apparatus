@@ -30,7 +30,7 @@ services:
     - "${APPARATUS_SECRETS_DIR}/apparatus:/run/secrets:ro"
     restart: "on-failure"
   nginx:
-    image: "nginx:1.21"
+    image: "nginx:1.23"
     command: >-
       /bin/bash -c "trap 'kill $$(jobs -p)' EXIT;
       while :; do
