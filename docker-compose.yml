@@ -1,30 +1,12 @@
 version: "3"
 services:
-  mysql:
-    image: "mysql:8.0"
-    command: "--default-authentication-plugin=mysql_native_password"
-    ports:
-    - "3306:3306"
-    environment:
-    - "MYSQL_DATABASE=apparatus"
-    - "MYSQL_USER_FILE=/run/secrets/mysql-apparatus-user"
-    - "MYSQL_PASSWORD_FILE=/run/secrets/mysql-apparatus-password"
-    - "MYSQL_RANDOM_ROOT_PASSWORD=1"
-    volumes:
-    - "dbdata:/var/lib/mysql"
-    - "${APPARATUS_SECRETS_DIR}/mysql:/run/secrets:ro"
-    restart: "on-failure"
   apparatus:
     image: "jasujm/apparatus"
     build: "."
-    ports:
-    - "8000:8000"
     environment:
     - "ENV_PATH=/run/secrets/envfile"
     - "DATA_DIR=/var/www/apparatus"
     - "ALLOWED_HOSTS=127.0.0.1,::,localhost,www.${APPARATUS_SERVER_NAME}"
-    depends_on:
-    - "mysql"
     volumes:
     - "webdata:/var/www/apparatus"
     - "${APPARATUS_SECRETS_DIR}/apparatus:/run/secrets:ro"
@@ -63,7 +45,6 @@ services:
     - "nginx"
     restart: "on-failure"
 volumes:
-  dbdata:
   webdata:
   certbotetc:
   certbotwww:
