@@ -1,6 +1,6 @@
-FROM python:3.9
+FROM python:3.10
 ENV PYTHONUNBUFFERED 1
-RUN apt-get update && apt-get install --yes netcat && \
+RUN apt-get update && apt-get install --yes netcat-openbsd && \
     useradd uwsgi && \
     mkdir -p /usr/src/apparatus
 WORKDIR /usr/src/apparatus
